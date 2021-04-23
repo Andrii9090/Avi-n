@@ -2,4 +2,15 @@
     <string name="app_name">Avión</string>
     <string name="text_clase_name">Clase</string>
     <string name="text_ubicaciones_name">Ubicación</string>
+    <string name="text_name_res">Nombre</string>
+    <string name="text_hint_nombre">Nombre</string>
+    <string name="text_dni_res">DNI</string>
+    <string name="text_hint_dni">DNI</string>
+    <string name="text_reservar">Reservar</string>
+    <string name="text_buscar_dni">Tu DNI</string>
+    <string name="text_buscar">Buscar</string>
+    <string name="text_quitar_pasajero">Quitar el Pasajero</string>
+    <string name="text_desocupar_avion">Desocupar Avion</string>
+    <string name="text_lista_de_pasajeros">Lista de reserva</string>
+    <string name="text_get_pasajero">Buscar Pasajero</string>
 </resources>

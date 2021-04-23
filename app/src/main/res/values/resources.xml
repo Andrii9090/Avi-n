@@ -4,4 +4,10 @@
         <item>Economica</item>
         <item>Ejecutiva</item>
     </string-array>
+
+    <string-array name="array_ubicaciones">
+        <item>Ventana</item>
+        <item>Centro</item>
+        <item>Pasillo</item>
+    </string-array>
 </resources>
