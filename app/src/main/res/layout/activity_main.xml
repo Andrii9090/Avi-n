@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <TextView
+        android:id="@+id/text_clases"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_clase_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="15"
+        />
+    <Spinner
+        android:id="@+id/spinner_clases"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/text_clases"
+        app:layout_constraintWidth_percent="35"
+        />
+    <TextView
+        android:id="@+id/text_ubicaciones"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_ubicaciones_name"
+        app:layout_constraintStart_toEndOf="@+id/spinner_clases"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/spinner_ubicaciones"
+        app:layout_constraintWidth_percent="15"
+        />
+    <Spinner
+        android:id="@+id/spinner_ubicaciones"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/text_ubicaciones"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="35"
+        />
+
+</android.support.constraint.ConstraintLayout>

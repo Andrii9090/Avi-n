@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Avión</string>
+    <string name="text_clase_name">Clase</string>
+    <string name="text_ubicaciones_name">Ubicación</string>
+</resources>
