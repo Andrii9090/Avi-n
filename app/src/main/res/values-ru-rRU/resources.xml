@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="array_clases">
-        <item id="1">Экономичный</item>
+        <item id="1">Эконом</item>
         <item id="2">Ejecutiva</item>
     </string-array>
 

@@ -31,6 +31,7 @@ public class ListaDeReservaRecyclerView extends RecyclerView.Adapter<ListaDeRese
         Pasajero pasajero = silla.getPasajero();
 
         holder.textNombre.setText(pasajero.getNombre()+" (DNI "+pasajero.getDni()+")");
+        holder.textPrecio.setText(String.valueOf(silla.getPrecio())+" EUR");
         if(silla.getClase().equals(Clase.ECONOMICA))
             holder.textSilla.setText(String.valueOf(silla.getNumero())+"EC");
         else
@@ -45,10 +46,12 @@ public class ListaDeReservaRecyclerView extends RecyclerView.Adapter<ListaDeRese
     public static class ViewHolderSillas extends RecyclerView.ViewHolder {
         private TextView textNombre;
         private TextView textSilla;
+        private TextView textPrecio;
         public ViewHolderSillas(@NonNull View itemView) {
             super(itemView);
             textNombre = (TextView) itemView.findViewById(R.id.nombre_de_pasajero);
             textSilla = (TextView) itemView.findViewById(R.id.numero_de_silla);
+            textPrecio = (TextView) itemView.findViewById(R.id.text_precio);
         }
     }
 }

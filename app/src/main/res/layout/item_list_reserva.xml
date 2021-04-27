@@ -9,10 +9,19 @@
         android:id="@+id/nombre_de_pasajero"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="80"
+        android:layout_weight="60"
         style="@style/LinearLayoutReserva"
         android:padding="5dp"
         tools:text="Pedro (DNI 147)"
+        />
+    <TextView
+        android:id="@+id/text_precio"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="20"
+        style="@style/LinearLayoutReserva"
+        android:padding="5dp"
+        tools:text="65 EUR"
         />
     <TextView
         android:id="@+id/numero_de_silla"

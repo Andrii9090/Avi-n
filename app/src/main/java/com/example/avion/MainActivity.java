@@ -151,33 +151,41 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void reservar(View view) {
-        Pasajero pasajero = new Pasajero(nombre.getText().toString(), dni.getText().toString());
-        Silla sillaLibra = avion.getSillaLibre(claseSelect, ubicacionSelect);
-        if(sillaLibra!=null){
-            if(!avion.hayHomonicasPasajeros(dni.getText().toString())) {
-                sillaLibra.asignarPasajero(pasajero);
-                guardarAvion();
-                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
-                String infoText = getString(R.string.text_pasajero_reservado)
-                        + System.lineSeparator() + getString(R.string.text_hint_nombre) + String.valueOf(sillaLibra.getNumero())
-                        + System.lineSeparator() + getString(R.string.text_clase_name) + String.valueOf(sillaLibra.getClase());
-                textInfo.setTextSize(14.0f);
-                textInfo.setTextColor(getResources().getColor(R.color.indigo_900));
-                textInfo.setText(infoText);
-                nombre.setText("");
-                dni.setText("");
-            }else{
-                String error = getString(R.string.pasajero_ya_reservado);
+        if(nombre.getText().toString().isEmpty() || dni.getText().toString().isEmpty()){
+            String error = getString(R.string.text_error_empty_name_dni);
+            textInfo.setText(error);
+            textInfo.setTextSize(18.0f);
+            textInfo.setTextColor(getResources().getColor(R.color.red_400));
+        }else{
+            Pasajero pasajero = new Pasajero(nombre.getText().toString(), dni.getText().toString());
+            Silla sillaLibra = avion.getSillaLibre(claseSelect, ubicacionSelect);
+            if (sillaLibra != null) {
+                if (!avion.hayHomonicasPasajeros(dni.getText().toString())) {
+                    sillaLibra.asignarPasajero(pasajero);
+                    guardarAvion();
+                    InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                    imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+                    String infoText = getString(R.string.text_pasajero_reservado)
+                            + System.lineSeparator() + getString(R.string.text_numero_de_silla) + " " + String.valueOf(sillaLibra.getNumero())
+                            + System.lineSeparator() + getString(R.string.text_precio) + " " + String.valueOf(sillaLibra.getPrecio())
+                            + System.lineSeparator() + getString(R.string.text_clase_name) + " " + String.valueOf(sillaLibra.getClase());
+                    textInfo.setTextSize(14.0f);
+                    textInfo.setTextColor(getResources().getColor(R.color.indigo_900));
+                    textInfo.setText(infoText);
+                    nombre.setText("");
+                    dni.setText("");
+                } else {
+                    String error = getString(R.string.pasajero_ya_reservado);
+                    textInfo.setText(error);
+                    textInfo.setTextSize(18.0f);
+                    textInfo.setTextColor(getResources().getColor(R.color.red_400));
+                }
+            } else {
+                String error = getString(R.string.no_hay_sillas) + " " + claseSelect.name() + " " + getString(R.string.text_en_ubication) + " " + ubicacionSelect.name();
                 textInfo.setText(error);
                 textInfo.setTextSize(18.0f);
                 textInfo.setTextColor(getResources().getColor(R.color.red_400));
             }
-        }else{
-            String error = getString(R.string.no_hay_sillas) + " "+ claseSelect.name() + " " + getString(R.string.text_en_ubication)+ " " + ubicacionSelect.name();
-            textInfo.setText(error);
-            textInfo.setTextSize(18.0f);
-            textInfo.setTextColor(getResources().getColor(R.color.red_400));
         }
     }
 

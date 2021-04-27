@@ -23,4 +23,7 @@
     <string name="text_en_ubication">en ubicación</string>
     <string name="text_pasajero_ha_quitado">ha quitado</string>
     <string name="text_quitar_pasajero_title">Quitar pasajero</string>
+    <string name="text_numero_de_silla">Numero de silla</string>
+    <string name="text_precio">Precio</string>
+    <string name="text_error_empty_name_dni">ERROR! Nombre or DNI estan vacios</string>
 </resources>
