@@ -96,13 +96,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String itemSelected = spinnerClasesAdapter.getItem(position).toString();
-                if(itemSelected.equals("Ejecutiva")){
+                String[] arrayClases = getResources().getStringArray(R.array.array_clases);
+                if(itemSelected.equals(arrayClases[0])){
                     spinnerUbicacionesAdapter = ArrayAdapter.createFromResource(view.getContext(), R.array.array_ubicaciones_ejecutiva, android.R.layout.simple_spinner_item);
                     spinnerUbicacionesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                     spinnerUbicaciones.setAdapter(spinnerUbicacionesAdapter);
                     claseSelect = Clase.EJECUTIVA;
                 }
-                if(itemSelected.equals("Economica")){
+                if(itemSelected.equals(arrayClases[1])){
                     spinnerUbicacionesAdapter = ArrayAdapter.createFromResource(view.getContext(), R.array.array_ubicaciones_economica, android.R.layout.simple_spinner_item);
                     spinnerUbicacionesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                     spinnerUbicaciones.setAdapter(spinnerUbicacionesAdapter);
@@ -112,8 +113,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-//                claseSelect = Clase.ECONOMICA;
-//                ubicacionSelect = Ubicacion.VENTANA;
+
             }
         });
 
@@ -121,14 +121,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String itemSelected = spinnerUbicacionesAdapter.getItem(position).toString();
-                Log.e("UBICACION", itemSelected);
-                if(itemSelected.equals("Ventana")){
+                String[] arrayUbicaion = getResources().getStringArray(R.array.array_ubicaciones_economica);
+                if(itemSelected.equals(arrayUbicaion[0])){
                     ubicacionSelect = Ubicacion.VENTANA;
                 }
-                if(itemSelected.equals("Centro")){
+                if(itemSelected.equals(arrayUbicaion[1])){
                     ubicacionSelect = Ubicacion.CENTRO;
                 }
-                if(itemSelected.equals("Pasillo")){
+                if(itemSelected.equals(arrayUbicaion[2])){
                     ubicacionSelect = Ubicacion.PASILLO;
                 }
             }
@@ -160,8 +160,10 @@ public class MainActivity extends AppCompatActivity {
                 InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                 imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
                 String infoText = getString(R.string.text_pasajero_reservado)
-                        + System.lineSeparator() + "Numero " + String.valueOf(sillaLibra.getNumero())
-                        + System.lineSeparator() + "Clase " + String.valueOf(sillaLibra.getClase());
+                        + System.lineSeparator() + getString(R.string.text_hint_nombre) + String.valueOf(sillaLibra.getNumero())
+                        + System.lineSeparator() + getString(R.string.text_clase_name) + String.valueOf(sillaLibra.getClase());
+                textInfo.setTextSize(14.0f);
+                textInfo.setTextColor(getResources().getColor(R.color.indigo_900));
                 textInfo.setText(infoText);
                 nombre.setText("");
                 dni.setText("");
@@ -172,7 +174,7 @@ public class MainActivity extends AppCompatActivity {
                 textInfo.setTextColor(getResources().getColor(R.color.red_400));
             }
         }else{
-            String error = getString(R.string.no_hay_sillas) + " "+ claseSelect.name() + " en ubicación " + ubicacionSelect.name();
+            String error = getString(R.string.no_hay_sillas) + " "+ claseSelect.name() + " " + getString(R.string.text_en_ubication)+ " " + ubicacionSelect.name();
             textInfo.setText(error);
             textInfo.setTextSize(18.0f);
             textInfo.setTextColor(getResources().getColor(R.color.red_400));
@@ -188,7 +190,7 @@ public class MainActivity extends AppCompatActivity {
         avion.desocuparAvion();
         textInfo.setText("");
         guardarAvion();
-        Toast toast = Toast.makeText(this, "Desocupado", Toast.LENGTH_SHORT);
+        Toast toast = Toast.makeText(this, getString(R.string.text_desoucpado), Toast.LENGTH_SHORT);
         toast.show();
     }
 

@@ -25,16 +25,11 @@ public class BusquedaActivity extends AppCompatActivity {
         setContentView(R.layout.busqueda_activity);
         Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar_main);
         toolbar.setTitleTextColor(getResources().getColor(R.color.white));
-        toolbar.setTitle("Buscar pasajero");
+        toolbar.setTitle(getResources().getString(R.string.text_busqueda_title));
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         GuardarAvion g = new GuardarAvion(getFilesDir().getAbsolutePath()+ File.pathSeparator+"avion.txt");
         avion = g.leerObjeto();
-        if(avion==null){
-            Log.e("Avion OBJ", "Avion NULL");
-        }else {
-            Log.e("Avion OBJ",avion.getSillaPasajero("147").getPasajero().getDni());
-        }
         infoText = (TextView) findViewById(R.id.text_info_buscar);
         dniPasajero = (EditText) findViewById(R.id.input_busca_dni);
         Button btnBuscar = (Button) findViewById(R.id.btn_buscar);

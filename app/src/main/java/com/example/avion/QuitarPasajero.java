@@ -26,7 +26,7 @@ public class QuitarPasajero extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar_main);
         toolbar.setTitleTextColor(getResources().getColor(R.color.white));
-        toolbar.setTitle("Quitar pasajero");
+        toolbar.setTitle(getResources().getString(R.string.text_quitar_pasajero_title));
         setSupportActionBar(toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -44,9 +44,9 @@ public class QuitarPasajero extends AppCompatActivity {
                 if(sillaPasajero!=null){
                     Pasajero pasajero = sillaPasajero.getPasajero();
                     sillaPasajero.quitarPasajero();
-                    String text = "Nombre "+pasajero.getNombre()+System.lineSeparator()
-                            +"DNI "+pasajero.getDni()+System.lineSeparator()
-                            +"ha quitado";
+                    String text = getString(R.string.text_hint_nombre)+" "+pasajero.getNombre()+System.lineSeparator()
+                            +getString(R.string.text_hint_dni)+" "+pasajero.getDni()+System.lineSeparator()
+                            +getString(R.string.text_pasajero_ha_quitado);
                     infoText.setText(text);
                     guardarAvion();
                 }else{

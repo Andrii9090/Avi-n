@@ -18,7 +18,7 @@ public class ListaDeReserva extends AppCompatActivity {
         setContentView(R.layout.activity_lista_de_reserva);
         Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar_main);
         toolbar.setTitleTextColor(getResources().getColor(R.color.white));
-        toolbar.setTitle("Lista de reserva");
+        toolbar.setTitle(getResources().getString(R.string.text_list_de_reserva_title));
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         GuardarAvion g = new GuardarAvion(getFilesDir().getAbsolutePath()+ File.pathSeparator+"avion.txt");
