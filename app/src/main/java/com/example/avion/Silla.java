@@ -1,5 +1,7 @@
 package com.example.avion;
 
+import java.io.Serializable;
+
 enum Clase {
     ECONOMICA,
     EJECUTIVA
@@ -11,7 +13,7 @@ enum Ubicacion {
     CENTRO
 }
 
-public class Silla {
+public class Silla implements Serializable {
     private int numero;
     private double precio;
     private Clase clase;
@@ -31,26 +33,26 @@ public class Silla {
     }
 
     public void quitarPasajero(){
-        pasajero = null;
+        this.pasajero = null;
     }
 
     public int getNumero() {
-        return numero;
+        return this.numero;
     }
 
     public double getPrecio() {
-        return precio;
+        return this.precio;
     }
 
     public Clase getClase() {
-        return clase;
+        return this.clase;
     }
 
     public Ubicacion getUbicacion() {
-        return ubicacion;
+        return this.ubicacion;
     }
 
     public Pasajero getPasajero() {
-        return pasajero;
+        return this.pasajero;
     }
 }

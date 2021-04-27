@@ -1,6 +1,8 @@
 package com.example.avion;
 
-public class Pasajero {
+import java.io.Serializable;
+
+public class Pasajero implements Serializable {
     private String nombre;
     private String dni;
 
@@ -10,10 +12,10 @@ public class Pasajero {
     }
 
     public String getNombre() {
-        return nombre;
+        return this.nombre;
     }
 
     public String getDni() {
-        return dni;
+        return this.dni;
     }
 }

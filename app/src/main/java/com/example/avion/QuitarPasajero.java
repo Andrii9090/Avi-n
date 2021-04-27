@@ -14,7 +14,7 @@ import android.widget.TextView;
 import java.io.File;
 import java.io.Serializable;
 
-public class BusquedaActivity extends AppCompatActivity {
+public class QuitarPasajero extends AppCompatActivity {
     Avion avion;
     TextView infoText;
     EditText dniPasajero;
@@ -22,21 +22,19 @@ public class BusquedaActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.busqueda_activity);
+        setContentView(R.layout.quitar_pasajero);
+
         Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar_main);
         toolbar.setTitleTextColor(getResources().getColor(R.color.white));
-        toolbar.setTitle("Buscar pasajero");
+        toolbar.setTitle("Quitar pasajero");
+        setSupportActionBar(toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         GuardarAvion g = new GuardarAvion(getFilesDir().getAbsolutePath()+ File.pathSeparator+"avion.txt");
         avion = g.leerObjeto();
-        if(avion==null){
-            Log.e("Avion OBJ", "Avion NULL");
-        }else {
-            Log.e("Avion OBJ",avion.getSillaPasajero("147").getPasajero().getDni());
-        }
         infoText = (TextView) findViewById(R.id.text_info_buscar);
-        dniPasajero = (EditText) findViewById(R.id.input_busca_dni);
+        dniPasajero = (EditText) findViewById(R.id.input_quitar_dni);
         Button btnBuscar = (Button) findViewById(R.id.btn_buscar);
 
         btnBuscar.setOnClickListener(new View.OnClickListener() {
@@ -45,15 +43,12 @@ public class BusquedaActivity extends AppCompatActivity {
                 Silla sillaPasajero = avion.getSillaPasajero(dniPasajero.getText().toString());
                 if(sillaPasajero!=null){
                     Pasajero pasajero = sillaPasajero.getPasajero();
-                    if(pasajero!=null){
-                        Log.e("Busqueda", pasajero.getDni());
-                    }
+                    sillaPasajero.quitarPasajero();
                     String text = "Nombre "+pasajero.getNombre()+System.lineSeparator()
                             +"DNI "+pasajero.getDni()+System.lineSeparator()
-                            +"Numero de silla " + String.valueOf(sillaPasajero.getNumero())+System.lineSeparator()
-                            +"Clase "+sillaPasajero.getClase().name()+System.lineSeparator()
-                            +"Ubicación "+ sillaPasajero.getUbicacion();
+                            +"ha quitado";
                     infoText.setText(text);
+                    guardarAvion();
                 }else{
                     infoText.setTextSize(18.0f);
                     infoText.setTextColor(getResources().getColor(R.color.red_400));
@@ -62,5 +57,11 @@ public class BusquedaActivity extends AppCompatActivity {
             }
         });
     }
+
+    private void guardarAvion() {
+        GuardarAvion g=new GuardarAvion(avion, getFilesDir().getAbsolutePath()+ File.pathSeparator+"avion.txt");
+        g.guardarObjeto();
+    }
+
 
 }

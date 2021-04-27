@@ -1,17 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.Toolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
-    android:background="@color/indigo_500"
-    android:id="@+id/toolbar_main">
+    android:background="@color/indigo_500">
 
-    <TextView
-        android:id="@+id/toolbar_info"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        tools:text="TEST" />
-</Toolbar>
+</androidx.appcompat.widget.Toolbar>

@@ -7,10 +7,14 @@
     <string name="text_dni_res">DNI</string>
     <string name="text_hint_dni">DNI</string>
     <string name="text_reservar">Reservar</string>
-    <string name="text_buscar_dni">Tu DNI</string>
+    <string name="text_buscar_dni">DNI de pasajero</string>
     <string name="text_buscar">Buscar</string>
     <string name="text_quitar_pasajero">Quitar el Pasajero</string>
     <string name="text_desocupar_avion">Desocupar Avion</string>
     <string name="text_lista_de_pasajeros">Lista de reserva</string>
     <string name="text_get_pasajero">Buscar Pasajero</string>
+    <string name="text_pasajero_reservado">Pasajero ha reservado</string>
+    <string name="no_hay_sillas">No hay sillas en clase</string>
+    <string name="text_error_pasajero_no_hay">No hay pasajero con este DNI</string>
+    <string name="pasajero_ya_reservado">Pasajero con lo mismo DNI ya ha reservado</string>
 </resources>

@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="array_clases">
-        <item id="2">Economica</item>
+        <item id="1">Economica</item>
         <item id="2">Ejecutiva</item>
     </string-array>
 
-    <string-array name="array_ubicaciones">
+    <string-array name="array_ubicaciones_ejecutiva">
+        <item id="1">Ventana</item>
+        <item id="3">Pasillo</item>
+    </string-array>
+    <string-array name="array_ubicaciones_economica">
         <item id="1">Ventana</item>
         <item id="2">Centro</item>
         <item id="3">Pasillo</item>

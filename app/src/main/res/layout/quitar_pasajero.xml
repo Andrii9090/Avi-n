@@ -13,31 +13,31 @@
         app:layout_constraintTop_toTopOf="parent"
         />
     <TextView
-        android:id="@+id/text_buscar_dni"
+        android:id="@+id/text_quitar_dni"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintWidth_percent="0.25"
         android:hint="@string/text_buscar_dni"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar_main"
-        app:layout_constraintBottom_toBottomOf="@+id/input_busca_dni"
+        app:layout_constraintBottom_toBottomOf="@id/input_quitar_dni"
         />
     <EditText
-        android:id="@+id/input_busca_dni"
+        android:id="@+id/input_quitar_dni"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/toolbar_main"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/text_buscar_dni"
-        app:layout_constraintBottom_toBottomOf="@id/text_buscar_dni"
-    />
+        app:layout_constraintStart_toEndOf="@id/text_quitar_dni"
+        app:layout_constraintBottom_toBottomOf="@id/text_quitar_dni"
+        />
     <Button
         android:id="@+id/btn_buscar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/ButtonMain"
-        android:text="@string/text_buscar"
-        app:layout_constraintTop_toBottomOf="@id/input_busca_dni"
+        style="@style/ButtonRemove"
+        android:text="@string/text_quitar_pasajero"
+        app:layout_constraintTop_toBottomOf="@id/input_quitar_dni"
         android:layout_marginTop="15dp"
         />
 
