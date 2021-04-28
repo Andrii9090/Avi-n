@@ -2,16 +2,16 @@
 <resources>
     <string-array name="array_clases">
         <item id="1">Эконом</item>
-        <item id="2">Ejecutiva</item>
+        <item id="2">Бизнес</item>
     </string-array>
 
     <string-array name="array_ubicaciones_ejecutiva">
-        <item id="1">Ventana</item>
-        <item id="3">Pasillo</item>
+        <item id="1">Возле окна</item>
+        <item id="3">Проход</item>
     </string-array>
     <string-array name="array_ubicaciones_economica">
-        <item id="1">Ventana</item>
-        <item id="2">Centro</item>
-        <item id="3">Pasillo</item>
+        <item id="1">Возле окна</item>
+        <item id="2">Центральный</item>
+        <item id="3">Проход</item>
     </string-array>
 </resources>
